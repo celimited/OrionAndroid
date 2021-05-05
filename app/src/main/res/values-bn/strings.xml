@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AKCG</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="smart_order_system">আবুল খায়ের</string>
+    <string name="login">লগ ইন</string>
+    <string name="order">Order</string>
+    <string name="user">User</string>
+    <string name="todays_section">Today\'s Section</string>
+    <string name="date">Date</string>
+    <string name="todaysstatus">Today\'s Status</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="promotions">Promotions</string>
+    <string name="home">Home</string>
+    <string name="exit">Exit</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="version_text">Version: 18.02.16 ©CEL</string>
+    <string name="lpc">LPC</string>
+    <string name="target">Target</string>
+    <string name="remaining">Remaining</string>
+    <string name="rem_outlet">Rem. Outlet</string>
+    <string name="online">Online</string>
+    <string name="track_gps">Track GPS</string>
+    <string name="action_home">Home</string>
+    <string name="sku">SKU</string>
+    <string name="na">N/A</string>
+    <string name="products">Products</string>
+    <string name="checkout">Checkout</string>
+    <string name="view_memo">View memo</string>
+    <string name="visit_outlet">Visit Outlet</string>
+
+</resources>

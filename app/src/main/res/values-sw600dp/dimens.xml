@@ -1,0 +1,10 @@
+<resources>
+
+    <!--
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw600dp devices (e.g. 7" tablets) here.
+    -->
+
+    <dimen name="form_label_font_size">12dp</dimen>
+    <dimen name="form_value_font_size">16dp</dimen>
+</resources>

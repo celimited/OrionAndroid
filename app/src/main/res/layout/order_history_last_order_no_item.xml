@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_name"
+    android:layout_width="wrap_content"    
+    android:padding="2dp"
+    android:ellipsize="none"  
+    android:textSize="25sp"
+    android:textStyle="bold"
+	android:maxLines="2"  
+	android:scrollHorizontally="false"   
+    android:gravity="center"
+  	android:background="@drawable/item_white_gradient_background"
+    android:layout_height="wrap_content" >
+</TextView>

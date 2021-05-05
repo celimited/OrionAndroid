@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" 
+    android:background="@drawable/gray_gradient_background"  
+	android:fadeScrollbars="false"
+    android:layout_height="fill_parent"> 
+	<LinearLayout
+	    android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="5dp" >
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal" >
+	
+			<TextView
+				android:layout_width="wrap_content"
+				android:textStyle="bold"
+				android:layout_height="wrap_content"			
+				android:padding="5dp"
+				android:text="Date:" />
+	
+			<TextView
+			    android:id="@+id/date_value"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"			
+				android:padding="2dp"
+				android:text="N/A" />
+		</LinearLayout>
+		
+		<TextView
+			android:layout_width="fill_parent"
+			android:textStyle="bold"
+			android:layout_height="wrap_content"			
+			android:padding="5dp"
+			android:background="@drawable/gray_gradient_background"		
+			android:textSize="15sp"
+			android:text="My Target" />
+	
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal" >
+	
+			<LinearLayout
+			    android:layout_width="0px"
+			    android:layout_weight="1"
+			    android:layout_height="wrap_content"
+			    android:orientation="vertical" >
+	
+				<TextView
+					android:layout_width="wrap_content"
+					android:textStyle="bold"
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="Target this month:" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:textStyle="bold"
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="Achieved till date:" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:textStyle="bold"
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="Remaining target:" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:textStyle="bold"
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="Remaining visit:" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:textStyle="bold"
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="Avg Target/visit:" />
+			</LinearLayout>
+			<LinearLayout
+			    android:layout_width="0px"
+			    android:layout_weight="1"
+			    android:paddingLeft="40dp"
+			    android:layout_height="wrap_content"
+			    android:orientation="vertical" >
+				<TextView
+				    android:id="@+id/target_this_month_value"
+					android:layout_width="match_parent"				
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="N/A" />		
+				<TextView
+				    android:id="@+id/achieved_till_date_value"
+					android:layout_width="match_parent"				
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="N/A" />
+				<TextView
+				    android:id="@+id/remaining_target_value"
+					android:layout_width="match_parent"				
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="N/A" />
+				<TextView
+				    android:id="@+id/remaining_visit_value"
+					android:layout_width="match_parent"				
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="N/A" />
+				<TextView
+				    android:id="@+id/avg_target_visit_value"
+					android:layout_width="match_parent"				
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="N/A" />
+			</LinearLayout>			
+		</LinearLayout>
+		<TextView
+			android:layout_width="fill_parent"
+			android:textStyle="bold"
+			android:layout_height="wrap_content"			
+			android:padding="5dp"
+			android:background="@drawable/gray_gradient_background"		
+			android:textSize="15sp"
+			android:layout_marginTop="10dp"		
+			android:text="Today's Status" />
+			<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal" >
+	
+			<LinearLayout
+			    android:layout_width="0px"
+			    android:layout_weight="1"
+			    android:layout_height="wrap_content"
+			    android:orientation="vertical" >
+	
+				<TextView
+					android:layout_width="wrap_content"
+					android:textStyle="bold"
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="Total outlet:" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:textStyle="bold"
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="Outlet remained:" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:textStyle="bold"
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="Achieved today:" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:textStyle="bold"
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="Visited outlet:" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:textStyle="bold"
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="S/R:" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:textStyle="bold"
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="LPC:" />
+			</LinearLayout>
+			<LinearLayout
+			    android:layout_width="0px"
+			    android:layout_weight="1"
+			    android:paddingLeft="40dp"
+			    android:layout_height="wrap_content"
+			    android:orientation="vertical" >
+				<TextView
+				    android:id="@+id/total_outlet_value"
+					android:layout_width="match_parent"				
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="N/A" />		
+				<TextView
+				    android:id="@+id/outlet_remained_value"
+					android:layout_width="match_parent"				
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="N/A" />
+				<TextView
+				    android:id="@+id/achieved_today_value"
+					android:layout_width="match_parent"				
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="N/A" />
+				<TextView
+				    android:id="@+id/visited_outlet_value"
+					android:layout_width="match_parent"				
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="N/A" />
+				<TextView
+				    android:id="@+id/s_r_value"
+					android:layout_width="match_parent"				
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="N/A" />
+				<TextView
+				    android:id="@+id/lpc_value"
+					android:layout_width="match_parent"				
+					android:layout_height="wrap_content"			
+					android:padding="5dp"
+					android:text="N/A" />
+			</LinearLayout>			
+		</LinearLayout>
+	
+	</LinearLayout>
+</ScrollView>

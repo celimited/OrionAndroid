@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".CheckOutActivity" >
+
+    <item
+        android:id="@+id/action_market_return"
+        android:orderInCategory="10"
+        app:showAsAction="withText|ifRoom"
+        android:titleCondensed="MR"
+        android:title="@string/market_return" />
+
+    <item
+        android:id="@+id/action_pop_item"
+        android:orderInCategory="10"
+        app:showAsAction="withText|ifRoom"
+        android:titleCondensed="PI"
+        android:title="@string/pop_item" />
+
+    <item
+        android:id="@+id/action_order_history"
+        android:orderInCategory="10"
+        app:showAsAction="withText|ifRoom"
+        android:titleCondensed="OH"
+        android:title="@string/order_history" />
+
+</menu>

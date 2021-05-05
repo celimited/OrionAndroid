@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:background="@drawable/gray_gradient_background"
+	android:orientation="vertical">
+
+	<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"        
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="2dp"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:text="Channel:"
+            android:textStyle="bold"/>
+	    <Spinner
+	        android:id="@+id/channel_list_drop_down_spinner"
+	        android:layout_width="0px"
+	        android:layout_weight="3"
+	        android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"       
+	        android:textAlignment="center" />
+    </LinearLayout>
+	-->
+
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+			android:id="@+id/topText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gray_gradient_background"
+            android:padding="10dp"
+            android:text="Name of TP"
+            android:textStyle="bold" />
+
+		<it.neokree.materialtabs.MaterialTabHost
+			android:id="@+id/tabHostPromotions"
+			android:layout_width="match_parent"
+			android:layout_height="48dp"
+			android:layout_below="@+id/topText"
+			app:textColor="@color/colorPrimary"
+			app:accentColor="@color/colorAccent"
+			app:primaryColor="@color/white" />
+
+		<android.support.v4.view.ViewPager
+			android:id="@+id/viewPager"
+			android:layout_weight="1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"/>
+
+
+        <!--
+                <ListView
+                    android:id="@+id/tp_list_list_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:fadeScrollbars="false"
+                    android:padding="10dp" >
+                </ListView> -->
+		<Button
+			android:id="@+id/btnClose"
+			android:text="@string/close"
+			android:textColor="@color/white"
+			android:background="@drawable/darkgreen"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

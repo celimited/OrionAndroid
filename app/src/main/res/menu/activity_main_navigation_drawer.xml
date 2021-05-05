@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/action_home" />
+        <item
+            android:id="@+id/nav_todays_status"
+            android:icon="@drawable/ic_status"
+            android:title="@string/todays_status" />
+        <item
+            android:id="@+id/nav_order_summary"
+            android:icon="@drawable/ic_summary"
+            android:title="@string/order_summary" />
+        <!--<item-->
+            <!--android:id="@+id/nav_sales_confirmation"-->
+            <!--android:icon="@drawable/ic_sales_confirmation"-->
+            <!--android:title="@string/sales_confirmation" />-->
+        <!--<item-->
+            <!--android:id="@+id/nav_promotions"-->
+            <!--android:icon="@drawable/ic_promotions"-->
+            <!--android:title="@string/promotions" />-->
+        <!--<item-->
+            <!--android:id="@+id/nav_new_outlets"-->
+            <!--android:icon="@drawable/ic_outlet"-->
+            <!--android:title="@string/new_outlets" />-->
+        <!--<item-->
+            <!--android:id="@+id/nav_employee_billing"-->
+            <!--android:icon="@drawable/ic_outlet"-->
+            <!--android:title="@string/employee_billing" />-->
+    </group>
+
+    <!--
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+    -->
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/exit"
+                android:icon="@drawable/ic_exit_black"
+                android:title="@string/exit" />
+        </menu>
+    </item>
+
+</menu>

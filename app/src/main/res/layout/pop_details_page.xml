@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gray_gradient_background"
+    android:orientation="vertical">
+	
+	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal" >
+		<TextView
+            android:layout_width="0px"
+            android:layout_weight="2"
+            android:layout_height="30dp"
+            android:padding="2dp"            
+            android:text="POP Item"            
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:textStyle="bold" />
+		<View
+    		android:layout_width="1dp"
+			android:visibility="gone"
+			android:layout_height="fill_parent"
+    		android:background="@android:color/darker_gray"/>
+		<TextView
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:padding="2dp"            
+            android:text="Last"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:textStyle="bold" />	
+		<View
+    		android:layout_width="1dp"
+			android:visibility="gone"
+			android:layout_height="fill_parent"
+    		android:background="@android:color/darker_gray"/>
+		<TextView
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:padding="2dp"            
+            android:text="Now"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:textStyle="bold" />		
+	</LinearLayout>
+	
+	<ListView 
+	       android:id="@+id/pop_item_list_view" 
+	       android:fadeScrollbars="false"           
+	       android:layout_width="match_parent"
+	       android:layout_height="0px"
+	       android:layout_weight="7"
+	       android:layout_marginTop="5dp"
+	       android:layout_marginBottom="5dp"
+	       android:scrollbars="vertical"	       
+	       android:gravity="center">	    
+	</ListView>
+	
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+		<Button
+		    android:id="@+id/back_button"
+			android:layout_width="0px"
+			android:layout_weight="1"
+			android:textColor="@color/white"
+			android:layout_height="wrap_content"
+            android:background="@drawable/darkgreen"
+			android:text="Back"/>		
+		<Button
+		    android:id="@+id/ok_button"
+			android:layout_width="0px"
+			android:layout_weight="1"
+			android:textColor="@color/white"
+			android:layout_height="wrap_content"
+            android:background="@drawable/darkgreen"
+			android:text="Ok"/>	
+	</LinearLayout>
+</LinearLayout>	

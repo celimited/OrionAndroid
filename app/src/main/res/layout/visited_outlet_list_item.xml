@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+	android:background="@drawable/item_white_gradient_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<TextView 
+	    android:id="@+id/outlet_name"
+		android:layout_width="match_parent"
+		android:gravity="center"
+		android:padding="2dp"
+		android:ellipsize="none"  
+		android:textSize="13sp"
+		android:maxLines="5"  
+		android:scrollHorizontally="false"
+	    android:layout_gravity="left"
+	    android:layout_height="0px" 
+	    android:layout_weight="2">
+	</TextView>
+	<TextView 
+	    android:id="@+id/order_value"
+		android:layout_width="match_parent"
+		android:gravity="center"
+		android:padding="2dp"
+		android:text="Empty"
+		android:layout_gravity="left"
+	    android:layout_height="0px" 
+	    android:layout_weight="1">
+	</TextView>
+</LinearLayout>

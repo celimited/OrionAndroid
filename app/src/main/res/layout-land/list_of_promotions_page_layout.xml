@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gray_gradient_background"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"        
+        android:layout_weight="1"    
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="2dp"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:text="Channel:"
+            android:textStyle="bold"/>
+	    <Spinner
+	        android:id="@+id/channel_list_drop_down_spinner"
+	        android:layout_width="0px"
+	        android:layout_weight="3"
+	        android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"       
+	        android:textAlignment="center" />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+         android:layout_weight="4"    
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gray_gradient_background"
+            android:padding="2dp"
+            android:text="Name of TP"
+            android:textStyle="bold" />
+        <ListView
+            android:id="@+id/tp_list_list_view"            
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"            
+    		android:gravity="center"        
+    		android:fadeScrollbars="false"    
+			android:padding="10dp" >            
+        </ListView> 
+    </LinearLayout>
+     <Button 
+            android:id="@+id/ok_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:height="35dp"
+            android:text="OK"/> 
+
+</LinearLayout>

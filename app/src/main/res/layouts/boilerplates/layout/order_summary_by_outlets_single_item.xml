@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="@dimen/fab_margin"
+    android:layout_width="match_parent"
+    android:background="@drawable/list_item_background"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/order_summary_by_outlets_single_item_txtOrderNo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/order_summery_text"
+        android:layout_weight="1.04"
+        android:padding="0dp"
+        android:text="10"
+        android:textColor="@android:color/black"
+        android:gravity="center_vertical"
+
+        android:paddingLeft="8dp"
+        android:background="#F5F5F5"/>
+
+    <View
+        android:visibility="gone"
+        android:layout_width="1dp"
+        android:layout_height="fill_parent"
+        android:background="@android:color/darker_gray"/>
+    <TextView
+        android:id="@+id/order_summary_by_outlets_single_item_txtOutletName"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/order_summery_text"
+        android:layout_height="wrap_content"
+        android:text="OutletName"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+
+        android:layout_weight="0.28"
+        android:background="#EEEEEE"/>
+    <View
+        android:visibility="gone"
+        android:layout_width="1dp"
+        android:layout_height="fill_parent"
+        android:background="@android:color/darker_gray"/>
+    <TextView
+        android:id="@+id/order_summary_by_outlets_single_item_txtTotal"
+        android:layout_width="0px"
+        android:layout_weight="1.44"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/order_summery_text"
+        android:text="Total"
+        android:textColor="@android:color/black"
+        android:gravity="right"
+
+        android:paddingRight="8dp"
+        android:background="#E0E0E0"/>
+    <View
+        android:visibility="gone"
+        android:layout_width="1dp"
+        android:layout_height="fill_parent"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/order_summary_by_outlets_single_item_txtSentStatus"
+        android:layout_width="0px"
+        android:layout_weight="1.5"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/order_summery_text"
+        android:text="Sent Status"
+        android:textColor="@android:color/black"
+        android:gravity="right"
+
+        android:paddingRight="8dp"
+        android:background="#BDBDBD"/>
+
+</LinearLayout>

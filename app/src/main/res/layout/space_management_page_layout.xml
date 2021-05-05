@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/text_margin"
+    android:background="@drawable/gray_gradient_background"
+    android:orientation="vertical"
+    tools:context=".SpaceManagementPageActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/item_padding"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_lable_color"
+            android:textSize="@dimen/form_label_font_size"
+            android:text="@string/space_management_bonus" />
+
+        <TextView
+            android:id="@+id/bonus_month_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/form_value_font_size"
+            android:text="N/A" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/item_padding"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_lable_color"
+            android:textSize="@dimen/form_label_font_size"
+            android:text="@string/bonus" />
+
+        <TextView
+            android:id="@+id/bonus_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/form_value_font_size"
+            android:text="N/A" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/text_margin"
+        android:padding="@dimen/item_padding"
+        android:textColor="@color/text_lable_color"
+        android:textSize="@dimen/form_label_font_size"
+        android:text="@string/do_pay_outlet" />
+
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="horizontal" >
+
+			<Button
+			    android:id="@+id/no_button"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/darkgreen"
+                android:layout_weight="1"
+				android:text="No" />	
+			<Button
+			    android:id="@+id/yes_button"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@drawable/darkgreen"
+				android:text="Yes" />
+	</LinearLayout>		
+</LinearLayout>

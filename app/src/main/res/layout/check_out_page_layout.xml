@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context=".CheckOutActivity">
+
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<LinearLayout
+			android:id="@+id/main_layout"
+			android:layout_weight="1"
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="@dimen/item_padding"
+				android:orientation="vertical" >
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="@color/text_lable_color"
+					android:textSize="@dimen/form_label_font_size"
+					android:text="@string/outlet" />
+
+				<TextView
+					android:id="@+id/outlet_name"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textSize="@dimen/form_value_font_size"
+					android:text="N/A" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="@dimen/item_padding"
+				android:orientation="vertical" >
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="@color/text_lable_color"
+					android:textSize="@dimen/form_label_font_size"
+					android:text="@string/order_value" />
+
+				<TextView
+					android:id="@+id/order_items_value"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textSize="@dimen/form_value_font_size"
+					android:text="N/A" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="@dimen/item_padding"
+				android:orientation="vertical" >
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="@color/text_lable_color"
+					android:textSize="@dimen/form_label_font_size"
+					android:text="@string/tp_discount" />
+
+				<TextView
+					android:id="@+id/order_tp_disc_value"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textSize="@dimen/form_value_font_size"
+					android:text="N/A" />
+			</LinearLayout>
+
+			<!--
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/item_padding"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text_lable_color"
+                                android:textSize="@dimen/form_label_font_size"
+                                android:text="@string/mr_adjustment" />
+
+                            <TextView
+                                android:id="@+id/order_mr_adj_value"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/form_value_font_size"
+                                android:text="N/A" />
+                        </LinearLayout>
+                        -->
+
+			<!--
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="@dimen/item_padding"
+                                        android:orientation="vertical" >
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:textColor="@color/text_lable_color"
+                                            android:textSize="@dimen/form_label_font_size"
+                                            android:text="@string/space_management" />
+
+                                        <TextView
+                                            android:id="@+id/order_spc_mgt_value"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="@dimen/form_value_font_size"
+                                            android:text="N/A" />
+                                    </LinearLayout>
+                                     -->
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="@dimen/item_padding"
+                                        android:orientation="vertical" >
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:textColor="@color/text_lable_color"
+                                            android:textSize="@dimen/form_label_font_size"
+                                            android:text="@string/net_value" />
+
+                                        <TextView
+                                            android:id="@+id/order_net_value"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="@dimen/form_value_font_size"
+                                            android:text="N/A" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal" >
+
+                                        <TextView
+                                            android:layout_width="0px"
+                                            android:textStyle="bold"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1.5"
+                                            android:padding="2dp"
+                                            android:textColor="@color/text_lable_color"
+                                            android:textSize="@dimen/form_label_font_size"
+                                            android:text="@string/delivery_mode" />
+                                        <ToggleButton
+                                            android:layout_width="0px"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1.5"
+                                            android:padding="2dp"
+                                            android:id="@+id/toggleButtonDeliveryMode"
+                                            android:textOn="Evening"
+                                            android:textOff="Morning"
+                                            android:onClick="onToggleDeliveryModeClicked"/>
+
+                                    </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal" >
+
+                                    <TextView
+                                        android:layout_width="0px"
+                                        android:textStyle="bold"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2.1"
+                                        android:padding="2dp"
+                                        android:textColor="@color/text_lable_color"
+                                        android:textSize="@dimen/form_label_font_size"
+                                        android:text="@string/delivery_date" />
+
+                                    <Button
+                                        android:id="@+id/btndatepicker"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/pick_date"/>
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal" >
+
+                                        <TextView
+                                            android:layout_width="0px"
+                                            android:textStyle="bold"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1.5"
+                                            android:padding="2dp"
+                                            android:textColor="@color/text_lable_color"
+                                            android:textSize="@dimen/form_label_font_size"
+                                            android:text="@string/payment_on" />
+                                        <ToggleButton
+                                            android:layout_width="0px"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1.5"
+                                            android:padding="2dp"
+                                            android:id="@+id/toggleButton"
+                                            android:textOn="Credit"
+                                            android:textOff="Cash"
+                                            android:onClick="onToggleClicked"/>
+
+                                    </LinearLayout>
+
+                                    <Button
+                                        android:id="@+id/selectReason"
+                                        android:visibility="invisible"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:layout_gravity="bottom"
+                                        android:background="@drawable/darkgreen"
+                                        android:text = "@string/select_reason"/>
+
+                                </LinearLayout>
+                            </ScrollView>
+
+
+                            <Button
+                                android:id="@+id/final_check_out_button"
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_gravity="bottom"
+                                android:textColor="@color/white"
+                                android:background="@drawable/darkgreen"
+                                android:text = "@string/checkout"/>
+                        </android.support.design.widget.CoordinatorLayout>

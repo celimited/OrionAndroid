@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_ordered"
+        android:orderInCategory="100"
+        android:title="@string/ordered"
+        android:icon="@drawable/ordered_list"
+        app:showAsAction="always"
+        android:titleCondensed="@string/ordered_condensed"/>
+
+    <item android:id="@+id/action_picture_outlet"
+        android:orderInCategory="100"
+        android:title="@string/picture_outlet"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_picture_products"
+        android:orderInCategory="100"
+        android:title="@string/picture_products"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_picture_program"
+        android:orderInCategory="100"
+        android:title="@string/picture_program"
+        app:showAsAction="never" />
+
+</menu>

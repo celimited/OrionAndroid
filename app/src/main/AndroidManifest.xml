@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.orion.application"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.orion.application.OutletListPageActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/outlet_list"
+            android:parentActivityName="com.orion.application.MainNavigationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!-- android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" -->
+        <activity
+            android:name="com.orion.application.MarketReturnPageActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/market_return"
+            android:parentActivityName="com.orion.application.CheckOutActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.orion.application.OutletVisitPageActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/visit_outlet"
+            android:parentActivityName="com.orion.application.OutletListPageActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.orion.application.OrderDetailPageActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/order_details"
+            android:parentActivityName="com.orion.application.OutletVisitPageActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible" />
+        <activity
+            android:name="com.orion.application.OrderHistoryActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/order_history"
+            android:parentActivityName="com.orion.application.CheckOutActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.orion.application.ViewMemoActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/view_memo"
+            android:parentActivityName="com.orion.application.OutletVisitPageActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.orion.application.CheckOutActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/checkout"
+            android:parentActivityName="com.orion.application.OutletVisitPageActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.orion.application.PopItemDetailsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/pop_item"
+            android:parentActivityName="com.orion.application.CheckOutActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.orion.application.PopItemEntryActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/pop_item_details"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.orion.application.SpaceManagementPageActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/space_management"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.orion.application.LoginPageActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.orion.application.RegisterPageActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.orion.application.MainActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.orion.print.PrintActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name="com.orion.print.BTDeviceList"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name="com.orion.application.VisitDatePageActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name="com.orion.application.MainNavigationActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.orion.application.NewOutletActivity"
+            android:label="@string/new_outlet"
+            android:parentActivityName="com.orion.application.MainActivity"></activity>
+        <activity
+            android:name="com.orion.application.SalesOrderConfirmationActivity"
+            android:label="@string/sales_confirmation"
+            android:parentActivityName="com.orion.application.MainActivity">
+        </activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>
