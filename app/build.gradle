@@ -1,14 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 28
     buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "com.orion.application"
-        minSdkVersion 10
-        targetSdkVersion 24
+        minSdkVersion 14
+        targetSdkVersion 28
     }
+
+    flavorDimensions "default"
 
     sourceSets {
         main {
@@ -27,15 +29,55 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    productFlavors
+            {
+                orion {}
+            }
+
+    applicationVariants.all { variant ->
+        println("Iterating variant: " + variant.getName())
+
+        if (variant.getName() == "orionDebug") {
+
+            variant.buildConfigField "String", "ApplicationDownloadLink", '"http://37.61.213.122/Orion_WebService/orion/orion.apk"'
+            variant.buildConfigField "String", "FileVersionDownloadLink", '"http://37.61.213.122/Orion_WebService/orion/version.txt"'
+
+            variant.buildConfigField "String", 'SOAP_ADDRESS', '"http://37.61.216.162/Orion_WebService/OrionSales.asmx"'
+            //Test
+            variant.buildConfigField "String", 'REST_SERVICE_URL', '"http://182.160.122.60/orionrestservice/api/"'
+
+            variant.buildConfigField "String", 'ApplicationFolderTOFileExtensionPath', '"/orion/orion.apk"'
+            variant.buildConfigField "String", 'ApplicationFolderTOVersionFileExtensionPath', '"/orion/version.txt"'
+            variant.buildConfigField "String", 'ApplicationDataDownloadFolderPath', '"/orion"'
+            variant.buildConfigField "String", 'ApplicationNameWithExtension', '"/orion.apk"'
+
+        } else if (variant.getName() == "orionRelease") {
+
+            variant.buildConfigField "String", "ApplicationDownloadLink", '"http://182.160.122.60/Orion_WebService/orion/orion.apk"'
+            variant.buildConfigField "String", "FileVersionDownloadLink", '"http://182.160.122.60/Orion_WebService/orion/version.txt"'
+
+            variant.buildConfigField "String", 'SOAP_ADDRESS', '"http://182.160.122.60/Orion_WebService/OrionSales.asmx"'
+            //Live
+            variant.buildConfigField "String", 'REST_SERVICE_URL', '"http://182.160.122.60/orionrestservice/api/"'
+
+            variant.buildConfigField "String", 'ApplicationFolderTOFileExtensionPath', '"/orion/orion.apk"'
+            variant.buildConfigField "String", 'ApplicationFolderTOVersionFileExtensionPath', '"/orion/version.txt"'
+            variant.buildConfigField "String", 'ApplicationDataDownloadFolderPath', '"/orion"'
+            variant.buildConfigField "String", 'ApplicationNameWithExtension', '"/orion.apk"'
+        }
+    }
 }
 
 dependencies {
     compile files('libs/ksoap2-android-assembly-2.4-jar-with-dependencies (1).jar')
-    compile 'com.android.support:appcompat-v7:24.1.1'
-    compile 'com.android.support:design:24.1.1'
-    compile 'com.android.support:support-v4:24.1.1'
-    compile 'com.android.support:cardview-v7:24.1.1'
 
-    compile 'it.neokree:MaterialTabs:0.11'
-    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+
+    implementation 'it.neokree:MaterialTabs:0.11'
+
+    implementation 'com.google.android.gms:play-services-appindexing:9.8.0'
 }
