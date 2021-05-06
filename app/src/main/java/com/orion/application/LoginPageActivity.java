@@ -1,9 +1,11 @@
 package com.orion.application;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -12,6 +14,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.orion.common.CommonFunction;
 import com.orion.database.ConnectionContext;
@@ -22,7 +27,9 @@ import com.orion.webservice.Caller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class LoginPageActivity extends Activity {
 
@@ -38,6 +45,14 @@ public class LoginPageActivity extends Activity {
     public static Boolean logInStatus = false;
     public String LastUpdateTime = "";
     public String visitDate = "";
+
+    String[] permissions = new String[]{
+            Manifest.permission.INTERNET,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION
+    };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,11 +76,12 @@ public class LoginPageActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                // Start the Signup activity
                 Intent intent = new Intent(getApplicationContext(), RegisterPageActivity.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });
+
+        checkPermissions();
     }
 
     public void login() {
@@ -212,5 +228,28 @@ public class LoginPageActivity extends Activity {
         }
 
         return valid;
+    }
+
+    private void checkPermissions() {
+        int result;
+        List<String> listPermissionsNeeded = new ArrayList<>();
+        for (String p : permissions) {
+            result = ContextCompat.checkSelfPermission(this, p);
+            if (result != PackageManager.PERMISSION_GRANTED) {
+                listPermissionsNeeded.add(p);
+            }
+        }
+        if (!listPermissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), 100);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (requestCode == 100) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(context, "Permission is granted.", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
