@@ -41,7 +41,7 @@ public class CommonFunction {
         return today;
     }
 
-    public boolean isInternetOn(Context ctx) {
+    public static boolean isInternetOn(Context ctx) {
         Context context;
         context = ctx.getApplicationContext();
         // get Connectivity Manager object to check connection

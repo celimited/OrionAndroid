@@ -18,6 +18,7 @@ import com.orion.application.OutletVisitPageActivity;
 import com.orion.database.DatabaseConstants;
 import com.orion.entities.OrderItem;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Objects;
@@ -198,6 +199,28 @@ public class Util extends Activity {
         public void setOnDateSetListener(DatePickerDialog.OnDateSetListener listener){
             mListener = listener;
         }
+	}
+
+	public static boolean deleteDirectory(File path) {
+		if (path.exists()) {
+			File[] files = path.listFiles();
+			if (files == null) {
+				return true;
+			}
+			for (int i = 0; i < files.length; i++) {
+				if (files[i].isDirectory()) {
+					deleteDirectory(files[i]);
+				} else {
+					files[i].delete();
+				}
+			}
+		}
+		return (path.delete());
+	}
+
+	public static boolean deleteStoredFile(String path) {
+		File fdelete = new File(path);
+		return fdelete.delete();
 	}
 
 }

@@ -1,13 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "com.orion.application"
         minSdkVersion 14
-        targetSdkVersion 28
+        targetSdkVersion 29
+        buildConfigField "String", "ApplicationDownloadLink", '"http://37.61.213.122/Orion_WebService/orion/orion.apk"'
+        buildConfigField "String", "FileVersionDownloadLink", '"http://37.61.213.122/Orion_WebService/orion/version.txt"'
+        buildConfigField "String", 'VersionFileName', '"version.txt"'
     }
 
     flavorDimensions "default"

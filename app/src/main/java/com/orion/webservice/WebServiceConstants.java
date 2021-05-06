@@ -1,5 +1,7 @@
 package com.orion.webservice;
 
+import com.orion.application.BuildConfig;
+
 public class WebServiceConstants {
 
     public static final String WSDL_TARGET_NAMESPACE = "http://tempuri.org/";
@@ -24,6 +26,5 @@ public class WebServiceConstants {
 
     public static final String PARAMETER_NAME = "Object";
 
-    public static final String SOAP_ADDRESS = "http://37.61.216.162/Orion_WebService/OrionSales.asmx";  //Test
-    //public static final String SOAP_ADDRESS = "http://182.160.122.60/Orion_WebService/OrionSales.asmx"; //Client
+    public static final String SOAP_ADDRESS = BuildConfig.SOAP_ADDRESS;
 }

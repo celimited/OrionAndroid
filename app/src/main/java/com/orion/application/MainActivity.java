@@ -15,11 +15,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-/**
- * Created by robiul on 9/14/2015.
- */
-
 public class MainActivity extends Activity {
+
     private Context context;
     private boolean flag = false ;
     private String TAG = "Trace";
@@ -27,17 +24,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-/*
-        Locale locale = new Locale("bn");
-        Locale.setDefault(locale);
-
-        Configuration config = new Configuration();
-        config.locale = locale;
-        getBaseContext().getResources().updateConfiguration(config,
-                getBaseContext().getResources().getDisplayMetrics());
-*/
-
 
         if( getIntent().getBooleanExtra("Exit", false)){
             flag = true;
@@ -57,17 +43,13 @@ public class MainActivity extends Activity {
             this.finish();
             if (!status) {
                 Log.v(TAG, "TblDSRBasic does not exist");
-                Intent intent = new Intent(MainActivity.this,
-                        RegisterPageActivity.class);
+                Intent intent = new Intent(MainActivity.this, RegisterPageActivity.class);
                 startActivity(intent);
             } else {
                 Log.v(TAG, "TblDSRBasic exists");
-                Intent intent = new Intent(MainActivity.this,
-                        LoginPageActivity.class);
+                Intent intent = new Intent(MainActivity.this, ApplicationDownloadActivityNew.class);
                 startActivity(intent);
             }
-            //     readAddress();
-            //     WebServiceConstants ws = new WebServiceConstants();
         }
         this.finish();
     }
