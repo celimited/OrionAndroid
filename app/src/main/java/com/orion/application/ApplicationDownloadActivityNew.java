@@ -152,7 +152,8 @@ public class ApplicationDownloadActivityNew extends AppCompatActivity implements
                 URL url = new URL(arg0[0]);
                 HttpURLConnection c = (HttpURLConnection) url.openConnection();
                 c.setRequestMethod("GET");
-                c.setDoOutput(true);
+                //c.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
+                //c.setDoOutput(true);
                 c.connect();
                 int lengthOfFile = c.getContentLength();
 

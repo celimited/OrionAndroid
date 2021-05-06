@@ -8,8 +8,8 @@ android {
         applicationId "com.orion.application"
         minSdkVersion 14
         targetSdkVersion 29
-        versionCode 2
-        versionName "2"
+        versionCode 4
+        versionName "4"
         buildConfigField "String", "ApplicationDownloadLink", '"http://37.61.213.122/Orion_WebService/orion/orion.apk"'
         buildConfigField "String", "FileVersionDownloadLink", '"http://37.61.213.122/Orion_WebService/orion/version.txt"'
         buildConfigField "String", 'VersionFileName', '"version.txt"'
@@ -30,8 +30,9 @@ android {
 
     buildTypes {
         release {
+            debuggable true
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.debug
         }
     }
 
@@ -45,26 +46,27 @@ android {
 
         if (variant.getName() == "orionDebug") {
 
-            variant.buildConfigField "String", "ApplicationDownloadLink", '"http://37.61.213.122/Orion_WebService/orion/orion.apk"'
-            variant.buildConfigField "String", "FileVersionDownloadLink", '"http://37.61.213.122/Orion_WebService/orion/version.txt"'
+            variant.buildConfigField "String", "ApplicationDownloadLink", '"http://37.61.216.162/OrionSales/orion/orion.apk"'
+            variant.buildConfigField "String", "FileVersionDownloadLink", '"http://37.61.216.162/OrionSales/orion/version.txt"'
 
             variant.buildConfigField "String", 'SOAP_ADDRESS', '"http://37.61.216.162/Orion_WebService/OrionSales.asmx"'
-            //Test
             variant.buildConfigField "String", 'REST_SERVICE_URL', '"http://182.160.122.60/orionrestservice/api/"'
 
             variant.buildConfigField "String", 'ApplicationFolderTOFileExtensionPath', '"/orion/orion.apk"'
             variant.buildConfigField "String", 'ApplicationFolderTOVersionFileExtensionPath', '"/orion/version.txt"'
-            variant.buildConfigField "String", 'ApplicationDataDownloadFolderPath', '"/orion"'
+            variant.buildConfigField "String", 'ApplicationDataDownloadFolderPath', '"/osAndroid"'
             variant.buildConfigField "String", 'ApplicationNameWithExtension', '"/orion.apk"'
 
         } else if (variant.getName() == "orionRelease") {
 
-            variant.buildConfigField "String", "ApplicationDownloadLink", '"http://182.160.122.60/Orion_WebService/orion/orion.apk"'
-            variant.buildConfigField "String", "FileVersionDownloadLink", '"http://182.160.122.60/Orion_WebService/orion/version.txt"'
+            variant.buildConfigField "String", "ApplicationDownloadLink", '"http://37.61.216.162/OrionSales/orion/orion.apk"'
+            variant.buildConfigField "String", "FileVersionDownloadLink", '"http://37.61.216.162/OrionSales/orion/version.txt"'
 
             variant.buildConfigField "String", 'SOAP_ADDRESS', '"http://182.160.122.60/Orion_WebService/OrionSales.asmx"'
-            //Live
             variant.buildConfigField "String", 'REST_SERVICE_URL', '"http://182.160.122.60/orionrestservice/api/"'
+
+            //variant.buildConfigField "String", 'SOAP_ADDRESS', '"http://37.61.216.162/Orion_WebService/OrionSales.asmx"'
+            //variant.buildConfigField "String", 'REST_SERVICE_URL', '"http://182.160.122.60/orionrestservice/api/"'
 
             variant.buildConfigField "String", 'ApplicationFolderTOFileExtensionPath', '"/orion/orion.apk"'
             variant.buildConfigField "String", 'ApplicationFolderTOVersionFileExtensionPath', '"/orion/version.txt"'
