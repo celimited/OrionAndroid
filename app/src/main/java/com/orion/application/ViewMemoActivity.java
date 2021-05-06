@@ -3,8 +3,8 @@ package com.orion.application;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -15,20 +15,14 @@ import com.orion.adapter.OrderSummaryItemListAdapter;
 import com.orion.database.DatabaseQueryUtil;
 import com.orion.entities.FreeOrDiscount;
 import com.orion.entities.OrderItem;
-import com.orion.entities.Sku;
 import com.orion.print.PrintActivity;
 import com.orion.database.DatabaseConstants;
 import com.orion.util.Util;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
 
 
 public class ViewMemoActivity extends AppCompatActivity

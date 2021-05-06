@@ -25,28 +25,29 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class LoginPageActivity extends Activity {
+
     private static final String TAG = "LoginPageActivity";
     private static final int REQUEST_SIGNUP = 0;
     private EditText _passwordText;
     private Button _loginButton;
     private TextView _signupLink;
-    private  User user;
+    private User user;
     ConnectionContext connectionContext;
     public Context context;
     private Handler handler;
-    public static Boolean logInStatus=false;
-    public String LastUpdateTime="";
-    public String visitDate="";
+    public static Boolean logInStatus = false;
+    public String LastUpdateTime = "";
+    public String visitDate = "";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page_layout);
 
-        connectionContext=new ConnectionContext(this);
-        _passwordText=(EditText)findViewById(R.id.input_password);
-        _loginButton=(Button)findViewById(R.id.btn_login);
-        _signupLink=(TextView)findViewById(R.id.link_signup);
+        connectionContext = new ConnectionContext(this);
+        _passwordText = (EditText) findViewById(R.id.input_password);
+        _loginButton = (Button) findViewById(R.id.btn_login);
+        _signupLink = (TextView) findViewById(R.id.link_signup);
 
         _loginButton.setOnClickListener(new View.OnClickListener() {
 
@@ -88,23 +89,20 @@ public class LoginPageActivity extends Activity {
          */
         DatabaseQueryUtil.deleteOutlets(context);
 
-        String email= new DatabaseQueryUtil().GetMobilefromTblDSRBasic(context);
+        String email = new DatabaseQueryUtil().GetMobilefromTblDSRBasic(context);
         String password = _passwordText.getText().toString();
         LastUpdateTime = new DatabaseQueryUtil().GetLastUpdateTime(context);
         user = DatabaseQueryUtil.getUser(context);
         User us = DatabaseQueryUtil.getUser(context);
         visitDate = user.visitDate;
 
-        String storedPassword=connectionContext.getSinlgeEntry(email);
+        String storedPassword = connectionContext.getSinlgeEntry(email);
 
         // check if the Stored password matches with  Password entered by user
-        if(password.equals(us.password))
-        {
+        if (password.equals(us.password)) {
             Toast.makeText(LoginPageActivity.this, "Congrats: Login Successfull", Toast.LENGTH_LONG).show();
             logInStatus = true;
-        }
-        else
-        {
+        } else {
             Toast.makeText(LoginPageActivity.this, "Password does not match", Toast.LENGTH_LONG).show();
             logInStatus = false;
         }
@@ -145,8 +143,8 @@ public class LoginPageActivity extends Activity {
         boolean internet = new CommonFunction().isInternetOn(this.context);
         _loginButton.setEnabled(true);
 
-        if(internet){
-            Caller aCaller=new Caller();
+        if (internet) {
+            Caller aCaller = new Caller();
 
 //            aCaller.GetBrandsFromWeb(context, handler, "01730164824", "1234", user.company_ID);
 //            aCaller.GetChannelsFromWeb(context, handler, "01730164824", "1234", user.company_ID);
@@ -158,17 +156,16 @@ public class LoginPageActivity extends Activity {
 
             aCaller.GetBrandsFromWeb(context, handler, user.mobile_No, user.password, user.company_ID);
             aCaller.GetChannelsFromWeb(context, handler, user.mobile_No, user.password, user.company_ID);
-            aCaller.GetSectionFromWeb(context,handler, user.mobile_No, user.password,user.dsrId,user.company_ID);
+            aCaller.GetSectionFromWeb(context, handler, user.mobile_No, user.password, user.dsrId, user.company_ID);
             aCaller.GetSKUsFromWeb(context, handler, user.mobile_No, user.password, user.company_ID);
             aCaller.GetNoOrderReasonInfoFromWeb(context, handler, user.mobile_No, user.password, user.company_ID);
-            aCaller.GetOutletInfoFromWeb(context,handler, user.mobile_No, user.password,user.dsrId,user.company_ID);
+            aCaller.GetOutletInfoFromWeb(context, handler, user.mobile_No, user.password, user.dsrId, user.company_ID);
             // downloadSalesPromotion();
-        }
-        else {
+        } else {
             Toast.makeText(getBaseContext(), "Data connection not available!! Please connect to the internet and re-login  to update the data", Toast.LENGTH_LONG).show();
         }
         Intent intent = new Intent(LoginPageActivity.this,
-                MainNavigationActivity.class).putExtra(DatabaseConstants.tblDSRBasic.VISIT_DATE,visitDate);
+                MainNavigationActivity.class).putExtra(DatabaseConstants.tblDSRBasic.VISIT_DATE, visitDate);
         startActivity(intent);
         finish();
     }
@@ -192,27 +189,26 @@ public class LoginPageActivity extends Activity {
             e.printStackTrace();
         }
         String visitDate = sdf2.format(dt);
-        if(internet) {
+        if (internet) {
             Caller caller = new Caller();
             caller.GetSalesPromotionsFromWeb(context, null, user.mobile_No, user.password, user.company_ID, visitDate);
             caller.GetSPChannelSKUFromWeb(context, null, user.mobile_No, user.password, user.company_ID, visitDate);
             caller.GetSPSlabFromWeb(context, null, user.mobile_No, user.password, user.company_ID, visitDate);
             caller.GetSPBonusesFromWeb(context, null, user.mobile_No, user.password, user.company_ID, visitDate);
-            caller.GetDSRDailyTargetInfoFromWeb(context,null,user.mobile_No, user.password, user.company_ID,user.dsrId);
-            Toast.makeText(getBaseContext(),"Sales Promotion data updated", Toast.LENGTH_LONG).show();
-        }
-        else{
-            Toast.makeText(getBaseContext(),"Sales Promotion data sync failed. No internet connection", Toast.LENGTH_LONG).show();
+            caller.GetDSRDailyTargetInfoFromWeb(context, null, user.mobile_No, user.password, user.company_ID, user.dsrId);
+            Toast.makeText(getBaseContext(), "Sales Promotion data updated", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getBaseContext(), "Sales Promotion data sync failed. No internet connection", Toast.LENGTH_LONG).show();
         }
     }
 
     public boolean validate() {
         boolean valid = true;
-        EditText usernameEditText = (EditText)findViewById(R.id.input_password);
+        EditText usernameEditText = (EditText) findViewById(R.id.input_password);
         String pass = usernameEditText.getText().toString();
         if (pass.matches("")) {
             Toast.makeText(this, "You did not enter a Password", Toast.LENGTH_SHORT).show();
-            valid=false;
+            valid = false;
         }
 
         return valid;

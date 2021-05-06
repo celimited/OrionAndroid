@@ -6,14 +6,17 @@ import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
+import com.google.android.material.navigation.NavigationView;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,11 +28,7 @@ import com.orion.fragments.NewOutletListFragment;
 
 import java.util.Locale;
 
-
-public class MainNavigationActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,
-        NewOutletListFragment.OnListFragmentInteractionListener
-        {
+public class MainNavigationActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, NewOutletListFragment.OnListFragmentInteractionListener {
 
     private static final String TAG = "MainNavigationActivity";
     private User user;
@@ -38,7 +37,7 @@ public class MainNavigationActivity extends AppCompatActivity
     private int routeID = 0;
     private Activity context;
 
-    public static  boolean status;
+    public static boolean status;
     private Handler handler;
     private boolean isBangla;
     private Menu navigationMenu;
@@ -61,9 +60,9 @@ public class MainNavigationActivity extends AppCompatActivity
 
 //        menu.add(R.id.group1,Menu.NONE,Menu.NONE,itemName);
         Locale current;
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M){
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
             current = getResources().getConfiguration().getLocales().get(0);
-        } else{
+        } else {
             //noinspection deprecation
             current = getResources().getConfiguration().locale;
         }
@@ -76,8 +75,8 @@ public class MainNavigationActivity extends AppCompatActivity
 
         navigationMenu = navigationView.getMenu();
 
-        navigationView.setCheckedItem( R.id.nav_home );
-        selectFragment( R.id.nav_home );
+        navigationView.setCheckedItem(R.id.nav_home);
+        selectFragment(R.id.nav_home);
     }
 
     @Override
@@ -85,53 +84,41 @@ public class MainNavigationActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else if (!navigationMenu.getItem(0).isChecked()){
-            navigationView.setCheckedItem( R.id.nav_home );
-            selectFragment( R.id.nav_home );
+        } else if (!navigationMenu.getItem(0).isChecked()) {
+            navigationView.setCheckedItem(R.id.nav_home);
+            selectFragment(R.id.nav_home);
             setTitle(navigationMenu.getItem(0).getTitle());
         } else {
             quitButtonAction();
-//            super.onBackPressed();
         }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main_navigation, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         selectFragment(item.getItemId());
-        // Highlight the selected item has been done by NavigationView
         item.setChecked(true);
-        // Set action bar title
         setTitle(item.getTitle());
 
         return true;
     }
 
-    private void selectFragment(int id){
-//        int id = item.getItemId();
+    private void selectFragment(int id) {
 
         Fragment fragment = null;
         Class fragmentClass = TodaysStatusPageActivity.class;
@@ -163,19 +150,7 @@ public class MainNavigationActivity extends AppCompatActivity
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-
-//        else if (id == R.id.nav_sales_confirmation) {
-//            fragment = SalesConfirmationFragment.newInstance(1);
-//        } else if (id == R.id.nav_promotions) {
-//            fragment = PromotionsListActivity.newInstance();
-//        } else if (id == R.id.nav_new_outlets) {
-//            fragment = NewOutletListFragment.newInstance(3);
-//        }else if(id == R.id.nav_employee_billing){
-//
-//        }
-
-        else if (id == R.id.exit) {
+        } else if (id == R.id.exit) {
             quitButtonAction();
             return;
         }
@@ -199,8 +174,7 @@ public class MainNavigationActivity extends AppCompatActivity
         this.user = user;
     }
 
-
-    private void quitButtonAction(){
+    private void quitButtonAction() {
         AlertDialog.Builder quitConfirmationMessage = new AlertDialog.Builder(MainNavigationActivity.this);
         quitConfirmationMessage.setTitle("Quit");
         quitConfirmationMessage.setMessage("Are you sure you want to quit?");
@@ -209,15 +183,8 @@ public class MainNavigationActivity extends AppCompatActivity
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         dialog.cancel();
-//						DatabaseConstants.DATABASE_IMPORT_SUCCESS_FLAG = 1;
-//						Intent intent = new Intent(HomePageActivity.this, MainActivity.class);
-//						intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//						intent.putExtra("Exit", true);
                         DatabaseConstants.DATABASE_IMPORT_SUCCESS_FLAG = 1;
-                        //HomePageActivity.this.finish();
                         finish();
-                        //startActivity(intent);
-                        //Util.exportDatabaseToSdCard(context);
                     }
                 }).setNegativeButton("Cancel",
                 new DialogInterface.OnClickListener() {
@@ -234,17 +201,4 @@ public class MainNavigationActivity extends AppCompatActivity
     public void onListFragmentInteraction(Outlet item) {
         Log.d(TAG, "onListFragmentInteraction");
     }
-
-    /*
-    private void orderButtonAction() {
-//        Util.showWaitingDialog(context);
-        Intent intent = new Intent(context,
-                OutletListPageActivity.class).putExtra(
-                DatabaseConstants.tblDSRBasic.SECTION_ID, user.sectionId);
-        context.startActivity(intent);
-//        this.finish();
-    }
-*/
-
-
 }

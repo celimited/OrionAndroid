@@ -8,6 +8,8 @@ android {
         applicationId "com.orion.application"
         minSdkVersion 14
         targetSdkVersion 29
+        versionCode 2
+        versionName "2"
         buildConfigField "String", "ApplicationDownloadLink", '"http://37.61.213.122/Orion_WebService/orion/orion.apk"'
         buildConfigField "String", "FileVersionDownloadLink", '"http://37.61.213.122/Orion_WebService/orion/version.txt"'
         buildConfigField "String", 'VersionFileName', '"version.txt"'
@@ -75,10 +77,10 @@ android {
 dependencies {
     compile files('libs/ksoap2-android-assembly-2.4-jar-with-dependencies (1).jar')
 
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support:support-v4:28.0.0'
-    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
 
     implementation 'it.neokree:MaterialTabs:0.11'
 

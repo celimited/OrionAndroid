@@ -63,7 +63,7 @@
             app:accentColor="@color/colorAccent"
             app:primaryColor="#ffffff" />
 
-        <android.support.v4.view.ViewPager
+        <androidx.viewpager.widget.ViewPager
             android:id="@+id/outletListViewPager"
             android:layout_weight="1"
             android:layout_width="match_parent"

@@ -1,21 +1,10 @@
 package com.orion.webservice;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.AsyncTask;
-import android.support.v7.widget.helper.ItemTouchHelper;
-import android.util.Log;
-import android.widget.Toast;
+import androidx.recyclerview.widget.ItemTouchHelper;
 
-import com.orion.application.RegisterPageActivity;
-import com.orion.database.DatabaseQueryUtil;
-import com.orion.entities.User;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.PropertyInfo;
 import org.ksoap2.serialization.SoapObject;
