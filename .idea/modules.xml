@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/OrionAndroid.iml" filepath="$PROJECT_DIR$/OrionAndroid.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/OrionAndroid.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/OrionAndroid.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OrionCEL.iml" filepath="$PROJECT_DIR$/.idea/modules/OrionCEL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/OrionCEL.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/OrionCEL.app.iml" />
     </modules>
   </component>
 </project>
