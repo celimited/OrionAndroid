@@ -59,14 +59,11 @@ android {
 
         } else if (variant.getName() == "orionRelease") {
 
-            variant.buildConfigField "String", "ApplicationDownloadLink", '"http://37.61.216.162/OrionSales/orion/orion.apk"'
-            variant.buildConfigField "String", "FileVersionDownloadLink", '"http://37.61.216.162/OrionSales/orion/version.txt"'
+            variant.buildConfigField "String", "ApplicationDownloadLink", '"http://182.160.122.60/Orion_WebService/orion/orion.apk"'
+            variant.buildConfigField "String", "FileVersionDownloadLink", '"http://182.160.122.60/Orion_WebService/orion/version.txt"'
 
             variant.buildConfigField "String", 'SOAP_ADDRESS', '"http://182.160.122.60/Orion_WebService/OrionSales.asmx"'
             variant.buildConfigField "String", 'REST_SERVICE_URL', '"http://182.160.122.60/orionrestservice/api/"'
-
-            //variant.buildConfigField "String", 'SOAP_ADDRESS', '"http://37.61.216.162/Orion_WebService/OrionSales.asmx"'
-            //variant.buildConfigField "String", 'REST_SERVICE_URL', '"http://182.160.122.60/orionrestservice/api/"'
 
             variant.buildConfigField "String", 'ApplicationFolderTOFileExtensionPath', '"/orion/orion.apk"'
             variant.buildConfigField "String", 'ApplicationFolderTOVersionFileExtensionPath', '"/orion/version.txt"'
