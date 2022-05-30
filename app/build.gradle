@@ -62,7 +62,8 @@ android {
             variant.buildConfigField "String", "ApplicationDownloadLink", '"http://182.160.122.60/Orion_WebService/orion/orion.apk"'
             variant.buildConfigField "String", "FileVersionDownloadLink", '"http://182.160.122.60/Orion_WebService/orion/version.txt"'
 
-            variant.buildConfigField "String", 'SOAP_ADDRESS', '"http://182.160.122.60/Orion_WebService/OrionSales.asmx"'
+            //variant.buildConfigField "String", 'SOAP_ADDRESS', '"http://182.160.122.60/Orion_WebService/OrionSales.asmx"'
+            variant.buildConfigField "String", 'SOAP_ADDRESS', '"http://182.163.99.179/Orion_WebService/OrionSales.asmx"'
             variant.buildConfigField "String", 'REST_SERVICE_URL', '"http://182.160.122.60/orionrestservice/api/"'
 
             variant.buildConfigField "String", 'ApplicationFolderTOFileExtensionPath', '"/orion/orion.apk"'
